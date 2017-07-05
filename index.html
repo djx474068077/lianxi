@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<button>按钮1</button>
+		<button>按钮2</button>
+		<p id="p" style="color: red;font-size: 40px;">这是一个p标签</p>
+		<script>
+		
+//		var a=["北京","上海","广州","深圳"];
+// 		var b={a:["一线城市","北京","上海"],b:["新一线城市","成都","武汉","厦门"],c:["二线城市","合肥","长沙","郑州"]};
+// 		var c={color:"蓝色  ",height:"165cm  ",name:"露娜  ",nandu:5  ,jineng:["火","冰","闪烁","斩杀"]}
+//// 		alert(a);
+//// 		alert(b.b);
+// 		alert(c.color+c.height+c.name+c.nandu+c.jineng);
+		var btn=document.getElementsByTagName("button");
+		
+			btn[0].onclick=a;
+			btn[1].onclick=a;
+		function a(e){
+			if(e.target.innerHTML=="按钮1")
+			alert("这是按钮1");
+			else if(e.target.innerHTML=="按钮2")
+			alert("这是按钮2");
+			//statetime();
+		}
+		//获取当前时间，并显示出来
+ 		function statetime(){
+//			a=document.getElementById("p");
+//			a.innerText="用innerText修改";
+//			a.innerHTML="用innerHTML修改";
+			var t=new Date();
+			var y=t.getFullYear();
+			var month=t.getMonth();
+			var d=t.getDay();
+			var h=t.getHours();
+			var m=t.getMinutes();
+			var s=t.getSeconds();
+			var ms=t.getMilliseconds();
+			m=checktime(m);
+			s=checktime(s);
+			ms=checktime(ms);
+			//document.write("y"+"-"+"month"+"-"+"d"+"-"+"h"+"-"+"m"+"-"+"s");
+			document.getElementById("p").innerHTML=y+"年"+month+"月"+d+"日"+h+"-"+m+"-"+s+"-"+ms;
+			setTimeout(function() {statetime()}, 1);
+ 		}
+ 		//检查时间中的分秒，小于10 就在前面加个0
+ 		function checktime(i){
+ 			if(i<10){
+ 				i="0"+i;
+ 			}
+ 			return i;
+ 		}
+		
+		
+		</script>
+	</body>
+</html>
