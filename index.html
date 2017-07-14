@@ -2,31 +2,91 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
+		<title>练习</title>
+		<link rel="stylesheet" href="bt/css/bootstrap.css" />
+		<script type="text/javascript" src="bt/js/jquery.min.js"></script>
+		<script type="text/javascript" src="bt/js/bootstrap.min.js"></script>
+		<style>
+		body{text-align:center} 
+			
+			#p{
+				color: red;
+				font-size: 40px;
+			}
+			.btns{
+				width: 600px;
+				height: 80px;
+				border: 1px red solid;
+				border-radius: 10px;
+				padding: 10px;
+				text-align: center;
+				position:relative;
+				resize: both;/*这句和下一句是css3中使这个div可以让用户自己改变大小*/
+				overflow: auto;
+			}
+			.area{
+				width: 600px;
+				height: 200px;
+				border: 1px darkgoldenrod solid;
+				border-radius: 20px;
+				position: absolute;
+			}
+			.sbtn{
+				background-color: red;
+			}
+		</style>
 	</head>
 	<body>
-		<button>按钮1</button>
-		<button>按钮2</button>
-		<p id="p" style="color: red;font-size: 40px;">这是一个p标签</p>
+		<div class="container">
+			<div class="btns">
+				<button >按钮1</button>
+				<button >时间</button>
+				<button >按钮3</button>
+				<button >按钮4</button>
+				<button >按钮5</button>
+				<button >按钮6</button>
+			</div>
+			<div class="area floor1">
+				<p id="p">这是一个p标签</p>
+			</div>
+			<div class="area floor2">
+				<p id="p">这是一个p标签</p>
+			</div>
+			<div class="area floor3">
+				<p id="p">这是一个p标签</p>
+			</div>
+			<div class="area floor4">
+				<p id="p">这是一个p标签</p>
+			</div>
+			<div class="area floor5">
+				<p id="p">这是一个p标签</p>
+			</div>
+			<div class="area floor6">
+				<p id="p">这是一个p标签</p>
+			</div>
+		</div>
+		
+		
 		<script>
 		
 //		var a=["北京","上海","广州","深圳"];
-// 		var b={a:["一线城市","北京","上海"],b:["新一线城市","成都","武汉","厦门"],c:["二线城市","合肥","长沙","郑州"]};
 // 		var c={color:"蓝色  ",height:"165cm  ",name:"露娜  ",nandu:5  ,jineng:["火","冰","闪烁","斩杀"]}
-//// 		alert(a);
-//// 		alert(b.b);
 // 		alert(c.color+c.height+c.name+c.nandu+c.jineng);
-		var btn=document.getElementsByTagName("button");
+		window.onload = function(){
+			//var btn=document.getElementsByTagName("button");
+			var area=document.getElementsByClassName("area");
+			$("area").hide();
+				$("button").click(function(e){
+					
+					this.className="sbtn";
+					$("button").siblings().className="";
+				});
+			
+//			btn[0].onclick=a;
+//			btn[1].onclick=a; 
 		
-			btn[0].onclick=a;
-			btn[1].onclick=a;
-		function a(e){
-			if(e.target.innerHTML=="按钮1")
-			alert("这是按钮1");
-			else if(e.target.innerHTML=="按钮2")
-			alert("这是按钮2");
-			//statetime();
 		}
+		
 		//获取当前时间，并显示出来
  		function statetime(){
 //			a=document.getElementById("p");
